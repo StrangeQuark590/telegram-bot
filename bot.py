@@ -9,7 +9,7 @@ load_dotenv()
 TOKEN = os.getenv("BOT_TOKEN")
 
 if not TOKEN:
-    raise ValueError("❌ BOT_TOKEN is missing")
+    raise ValueError(" BOT_TOKEN is missing")
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if update.message is None:
@@ -39,7 +39,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         context.user_data.pop("pending_file")
 
         await update.message.reply_text("File uploaded successfully")
-        return  # ✅ important
+        return  #  important
 
     # 🔍 Search
     if not update.message.text:
@@ -64,12 +64,12 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("No documents available yet")
         return
 
-    message = "📂 Available Documents:\n\n"
+    message = " Available Documents:\n\n"
 
     for doc in docs:
         message += f"• {doc['keyword']}\n"
 
-    message += "\n👉 Send the name to get the file"
+    message += "\n Send the name to get the file"
 
     await update.message.reply_text(message)
 
