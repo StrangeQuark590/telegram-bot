@@ -4,7 +4,7 @@ from db import get_doc, collection, get_all_docs
 from dotenv import load_dotenv
 import os
 load_dotenv()
-TOKEN = os.getenv("BOT_TOKEN)
+TOKEN = os.getenv("BOT_TOKEN")
 async def handle_message(update : Update, context : ContextTypes.DEFAULT_TYPE):
     if update.message is None:
         return
