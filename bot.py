@@ -1,7 +1,10 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes, CommandHandler
 from db import get_doc, collection, get_all_docs
-TOKEN = "8674623006:AAEyjDHVCWDB9XnJEBMaP-DBf3RX63kgvtA"
+from dotenv import load_dotenv
+import os
+load_dotenv()
+TOKEN = os.getenv("BOT_TOKEN)
 async def handle_message(update : Update, context : ContextTypes.DEFAULT_TYPE):
     if update.message is None:
         return
